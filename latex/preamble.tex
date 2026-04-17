@@ -1,20 +1,33 @@
+% --- Pakete für Mathe und Layout ---
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb, amsthm, mathrsfs}
+\usepackage{geometry}
+\geometry{a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
 \usepackage[most]{tcolorbox}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
-% Box für Sätze
-\newtcolorbox{satzbox}[1]{
-  colback=green!5!white,
-  colframe=green!50!black,
-  fonttitle=\bfseries,
-  title=#1,
-  arc=2mm,
-  sharp corners=false
+% --- Definition der kompakten Boxen ---
+% Definitionen (Blau)
+\newtcolorbox{defi}[1]{
+  colback=blue!5!white, colframe=blue!75!black, 
+  fonttitle=\bfseries, title={Def: #1}, arc=1mm, size=small
+}
+% Sätze/Aussagen (Grün)
+\newtcolorbox{satz}[1]{
+  colback=green!5!white, colframe=green!60!black, 
+  fonttitle=\bfseries, title={Satz: #1}, arc=1mm, size=small
 }
 
-% Box für Manim-Hinweise
-\newtcolorbox{manimbox}{
-  colback=orange!5!white,
-  colframe=orange!75!black,
-  title=\textbf{Visualisierung},
-  after title=\hfill\textcolor{orange!75!black}{\faVideo} % Benötigt fontawesome
-}
+% --- Deine Abkürzungen (Makros) ---
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathrm{i}}            % Imaginäre Einheit aufrecht
+\renewcommand{\Re}{\operatorname{Re}}  % Realteil
+\renewcommand{\Im}{\operatorname{Im}}  % Imaginärteil
+\newcommand{\dz}{\mathrm{d}z}          % Differential für Integrale
+\newcommand{\eps}{\varepsilon}
+\newcommand{\res}{\operatorname{Res}}  % Residuum

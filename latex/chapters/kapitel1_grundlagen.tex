@@ -1,0 +1,64 @@
+% ==========================================
+% Kapitel 1: Komplexe Zahlen
+% ==========================================
+\section{Komplexe Zahlen}
+
+\textit{Literatur: Fischer/Lieb, Jänich, Remmert}
+
+\begin{defi}{Der Körper der komplexen Zahlen}
+Wir definieren die Menge der komplexen Zahlen als $\C = \{ (x,y) : x,y \in \R \} = \R^2$ mit den Verknüpfungen:
+\begin{align*}
+    (x_1, y_1) \pm (x_2, y_2) &= (x_1 \pm x_2, \, y_1 \pm y_2) \\
+    (x_1, y_1) \cdot (x_2, y_2) &= (x_1 x_2 - y_1 y_2, \, x_1 y_2 + x_2 y_1)
+\end{align*}
+Mit der Identifikation der Basisvektoren $1 = (1,0)$ und der imaginären Einheit $\I = (0,1)$ ergibt sich die Standarddarstellung:
+\[
+    (x,y) = x \cdot 1 + y \cdot \I = x + \I y \quad \text{mit} \quad \I^2 = -1
+\]
+Die Multiplikation lautet in dieser Schreibweise:
+\[
+    (x_1 + \I y_1)(x_2 + \I y_2) = x_1 x_2 - y_1 y_2 + \I(x_1 y_2 + x_2 y_1)
+\]
+\end{defi}
+
+\begin{defi}{Realteil, Imaginärteil und Betrag}
+Für $z = x + \I y \in \C$ mit $x,y \in \R$ definiert man:
+\begin{itemize}
+    \item \textbf{Realteil:} $\Re(z) = x = \frac{z + \bar{z}}{2}$
+    \item \textbf{Imaginärteil:} $\Im(z) = y = \frac{z - \bar{z}}{2\I}$
+    \item \textbf{Betrag:} $|z| = \sqrt{z\bar{z}} = \sqrt{(x+\I y)(x-\I y)} = \sqrt{x^2 + y^2} =: r$
+\end{itemize}
+\end{defi}
+
+\begin{defi}{Polarkoordinaten}
+Jedes $z \in \C \setminus \{0\}$ lässt sich eindeutig in Polarkoordinaten darstellen:
+\[
+    z = r e^{\I\varphi} = r(\cos\varphi + \I\sin\varphi) \quad \text{mit } r = |z| \text{ und } \varphi \in \R
+\]
+Das \textbf{Argument} $\varphi$ von $z$ ist eindeutig bestimmbar durch $\varphi_0 \in (-\pi, \pi]$ und $k \in \Z$ vermöge $\varphi = \varphi_0 + 2\pi k$.
+
+\textbf{Rechenregeln:}
+\begin{itemize}
+    \item \textbf{Multiplikation:} $r_1 e^{\I\varphi_1} \cdot r_2 e^{\I\varphi_2} = (r_1 r_2) e^{\I(\varphi_1 + \varphi_2)}$
+    \item \textbf{Inverses ($z \neq 0$):} $\frac{1}{z} = \frac{1}{r} e^{-\I\varphi}$ \\
+    In kartesischen Koordinaten: $\frac{1}{z} = \frac{\bar{z}}{z\bar{z}} = \frac{x}{x^2+y^2} - \I \frac{y}{x^2+y^2}$
+\end{itemize}
+\end{defi}
+
+\begin{defi}{Topologie und Konvergenz}
+\begin{itemize}
+    \item Eine Menge $U \subset \C$ heißt \textbf{offen} (bzw. abgeschlossen), falls sie aufgefasst als $U \subset \R^2$ offen (bzw. abgeschlossen) ist.
+    \item Eine Folge $(z_n)_{n \in \N} = (x_n + \I y_n)_{n \in \N} \subset \C$ \textbf{konvergiert}, falls die reellen Folgen der Real- und Imaginärteile konvergieren. Es gilt:
+    \[
+        \lim_{n \to \infty} (x_n + \I y_n) = \lim_{n \to \infty} x_n + \I \lim_{n \to \infty} y_n
+    \]
+\end{itemize}
+\end{defi}
+
+\begin{defi}{Komplexe Funktionen und Stetigkeit}
+Sei $G \subset \C$ und $f: G \to \C$ eine Funktion mit $f(z) = u(z) + \I v(z)$, wobei $u = \Re(f)$ und $v = \Im(f)$ reellwertige Funktionen $G \to \R$ sind. Fassen wir $(u,v): G \to \R^2$ auf, so gilt:
+\[
+    f \text{ ist stetig} \iff (u,v) \text{ ist stetig} \iff u \text{ und } v \text{ sind stetig}
+\]
+\textbf{Beispiele stetiger Funktionen:} Polynome, rationale Funktionen, komplexe Exponentialfunktion.
+\end{defi}

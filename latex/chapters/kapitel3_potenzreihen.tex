@@ -1,0 +1,52 @@
+% ==========================================
+% Kapitel 3: Potenzreihen
+% ==========================================
+\section{Potenzreihen}
+
+\begin{defi}{Formale Potenzreihe}
+Seien $z_0 \in \C$ und eine Folge $(a_n)_{n \in \N_0} \subset \C$ gegeben. Dann heißt 
+\[
+    \sum_{n=0}^\infty a_n (z-z_0)^n
+\]
+eine (formale) Potenzreihe um den \textbf{Entwicklungspunkt} $z_0$.
+\end{defi}
+
+\begin{satz}{Konvergenzradius (Satz von Cauchy-Hadamard)}
+Sei $\sum_{n=0}^\infty a_n (z-z_0)^n$ eine Potenzreihe. Dann existiert ein \textbf{Konvergenzradius} $R \in [0, \infty]$, sodass gilt:
+\begin{itemize}
+    \item Die Reihe konvergiert absolut für alle $z \in \C$ mit $|z-z_0| < R$.
+    \item Die Reihe divergiert für alle $z \in \C$ mit $|z-z_0| > R$.
+\end{itemize}
+Der Konvergenzradius $R$ lässt sich berechnen durch:
+\[
+    R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}} \quad \text{(mit Konventionen } \tfrac{1}{0}=\infty, \tfrac{1}{\infty}=0 \text{)}
+\]
+\end{satz}
+
+\textbf{Beispiele für Konvergenzradien:}
+\begin{itemize}
+    \item Geometrische Reihe: $\sum z^n = \frac{1}{1-z}$ konvergiert für $|z|<1 \implies R = 1$.
+    \item Exponentialreihe: $\sum \frac{z^n}{n!} = e^z$ konvergiert überall $\implies R = \infty$.
+    \item Fakultätsreihe: $\sum n! z^n$ konvergiert nur in $z=0 \implies R = 0$.
+\end{itemize}
+
+\subsection{Komplexe Winkelfunktionen}
+
+\begin{defi}{Sinus und Cosinus im Komplexen}
+Wir definieren für $z \in \C$ über absolut konvergente Potenzreihen ($R=\infty$):
+\begin{align*}
+    \sin(z) &= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} z^{2n+1} \\
+    \cos(z) &= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} z^{2n}
+\end{align*}
+\end{defi}
+
+\textbf{Bemerkung (Eulersche Formel und Eigenschaften):}
+Für alle $z \in \C$ gilt die fundamentale Eulersche Identität:
+\[
+    \cos(z) + \I \sin(z) = e^{\I z}
+\]
+Daraus ergeben sich die Darstellungen:
+\[
+    \cos(z) = \frac{e^{\I z} + e^{-\I z}}{2} \quad \text{und} \quad \sin(z) = \frac{e^{\I z} - e^{-\I z}}{2\I}
+\]
+\textbf{Achtung:} Im Gegensatz zum Reellen sind Sinus und Cosinus auf $\C$ \textbf{unbeschränkt}! Betrachtet man z.B. $\cos(\I y)$ für rein imaginäre Zahlen $y \in \R, y \to \infty$, wächst die Funktion exponentiell ($\sim \frac{e^y}{2}$). Zudem gilt im Allgemeinen \textbf{nicht} $\cos(z) = \Re(e^{\I z})$ für $z \notin \R$.

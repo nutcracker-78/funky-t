@@ -1,0 +1,58 @@
+% ==========================================
+% Kapitel 2: Holomorphe Funktionen & Differenzierbarkeit
+% ==========================================
+\section{Holomorphe Funktionen}
+
+\begin{defi}{Komplexe Differenzierbarkeit und Holomorphie}
+Sei $G \subset \C$ offen, $f: G \to \C$ und $z_0 \in G$.
+\begin{itemize}
+    \item[i)] $f$ heißt \textbf{komplex differenzierbar} in $z_0$, falls der Differentialquotient existiert:
+    \[
+        \lim_{z \to z_0} \frac{f(z)-f(z_0)}{z-z_0} =: f'(z_0) \in \C
+    \]
+    \item[ii)] $f$ heißt \textbf{holomorph} in $G$, falls $f$ in jedem Punkt $z_0 \in G$ komplex differenzierbar ist. Man schreibt: $f \in \mathcal{H}(G)$.
+    \item[iii)] Höhere Ableitungen werden induktiv definiert: $f^{(k+1)}(z) = (f^{(k)})'(z)$.
+\end{itemize}
+\end{defi}
+
+\textbf{Bemerkung (Äquivalente Formulierungen):} 
+$f$ ist in $z_0$ komplex differenzierbar mit Ableitung $w = f'(z_0)$ genau dann, wenn für den Fehlerterm gilt:
+\[
+    \forall \eps > 0 \; \exists \delta > 0 : |f(z)-f(z_0) - w(z-z_0)| \le \eps |z-z_0| \quad \forall z \in B_\delta(z_0) \subset G
+\]
+
+\begin{satz}{Rechenregeln für holomorphe Funktionen}
+Sei $G \subset \C$ offen, $f, g: G \to \C$ komplex diffbar in $z_0 \in G$ und $c \in \C$. Dann gilt:
+\begin{enumerate}
+    \item $f$ ist stetig in $z_0$, also $f \in C^0(G; z_0)$.
+    \item Linearität: $cf, f \pm g \in \mathcal{H}(G; z_0)$ mit den üblichen Ableitungsregeln.
+    \item Produktregel: $f \cdot g \in \mathcal{H}(G; z_0)$ mit $(fg)'(z_0) = f'(z_0)g(z_0) + f(z_0)g'(z_0)$.
+    \item Quotientenregel: Falls $g(z_0) \neq 0$, ist $\frac{f}{g} \in \mathcal{H}(G; z_0)$ mit $(\frac{f}{g})'(z_0) = \frac{f'(z_0)g(z_0) - f(z_0)g'(z_0)}{g(z_0)^2}$.
+    \item Kettenregel: $(h \circ f)'(z_0) = h'(f(z_0)) \cdot f'(z_0)$.
+\end{enumerate}
+\end{satz}
+
+\textbf{Beispiele:}
+Konstante Funktionen $f(z)=c \implies f'(z)=0$. 
+Polynome $p(z) = \sum_{k=0}^n a_k z^k \in \mathcal{H}(\C)$ mit $p'(z) = \sum_{k=1}^n a_k k z^{k-1}$.
+
+\subsection{Komplexe- vs. Reelle Differenzierbarkeit}
+
+\begin{satz}{Cauchy-Riemann Differentialgleichungen (CR-DGL)}
+Sei $G \subset \C$ offen, $f = (u,v): G \to \C \cong \R^2$ und $z_0 = (x_0, y_0) \in G$. 
+Dann ist $f$ genau dann in $z_0$ komplex differenzierbar, wenn $f$ in $(x_0, y_0)$ total (reell) differenzierbar ist und die \textbf{Cauchy-Riemann-DGL} gelten:
+\[
+    \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{und} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+\]
+Die komplexe Ableitung lässt sich dann berechnen als:
+\[
+    f'(z_0) = \frac{\partial u}{\partial x}(x_0, y_0) + \I \frac{\partial v}{\partial x}(x_0, y_0)
+\]
+Die reelle Jacobi-Matrix hat in diesem Fall die spezielle Form $Df(x_0, y_0) = \begin{pmatrix} \xi & -\eta \\ \eta & \xi \end{pmatrix}$.
+\end{satz}
+
+\textbf{Wichtige Folgerungen / Beispiele:}
+\begin{itemize}
+    \item Die komplexe Konjugation $f(z) = \bar{z}$ ist \textbf{nicht} holomorph (CR-DGL nicht erfüllt).
+    \item Ist eine holomorphe Funktion nur reellwertig ($f: \C \to \R$, also $v \equiv 0$), so folgt aus den CR-DGL sofort $\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0$, womit $f$ \textbf{konstant} sein muss.
+\end{itemize}
