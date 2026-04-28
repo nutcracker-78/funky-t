@@ -27,20 +27,18 @@ Sei $G \subset \C$ offen, $f, g: G \to \C$ komplex diffbar in $z_0 \in G$ und $c
     \item $f$ ist stetig in $z_0$, also $f \in C^0(G; z_0)$.
     \item Linearität: $cf, f \pm g \in \mathcal{H}(G; z_0)$ mit den üblichen Ableitungsregeln.
     \item Produktregel: $f \cdot g \in \mathcal{H}(G; z_0)$ mit $(fg)'(z_0) = f'(z_0)g(z_0) + f(z_0)g'(z_0)$.
-    \item Quotientenregel: Falls $g(z_0) \neq 0$, ist $\frac{f}{g} \in \mathcal{H}(G; z_0)$ mit $(\frac{f}{g})'(z_0) = \frac{f'(z_0)g(z_0) - f(z_0)g'(z_0)}{g(z_0)^2}$.
+    \item Quotientenregel: Falls $g(z_0) \neq 0$, ist $\frac{f}{g} \in \mathcal{H}(G; z_0)$ mit $\left(\frac{f}{g}\right)'(z_0) = \frac{f'(z_0)g(z_0) - f(z_0)g'(z_0)}{g(z_0)^2}$.
     \item Kettenregel: $(h \circ f)'(z_0) = h'(f(z_0)) \cdot f'(z_0)$.
 \end{enumerate}
 \end{satz}
 
 \textbf{Beispiele:}
-Konstante Funktionen $f(z)=c \implies f'(z)=0$. 
-Polynome $p(z) = \sum_{k=0}^n a_k z^k \in \mathcal{H}(\C)$ mit $p'(z) = \sum_{k=1}^n a_k k z^{k-1}$.
+Konstante Funktionen $f(z)=c \implies f'(z)=0$. Polynome $p(z) = \sum_{k=0}^n a_k z^k \in \mathcal{H}(\C)$ mit $p'(z) = \sum_{k=1}^n a_k k z^{k-1}$.
 
 \subsection{Komplexe- vs. Reelle Differenzierbarkeit}
 
 \begin{satz}{Cauchy-Riemann Differentialgleichungen (CR-DGL)}
-Sei $G \subset \C$ offen, $f = (u,v): G \to \C \cong \R^2$ und $z_0 = (x_0, y_0) \in G$. 
-Dann ist $f$ genau dann in $z_0$ komplex differenzierbar, wenn $f$ in $(x_0, y_0)$ total (reell) differenzierbar ist und die \textbf{Cauchy-Riemann-DGL} gelten:
+Sei $G \subset \C$ offen, $f = (u,v): G \to \C \cong \R^2$ und $z_0 = (x_0, y_0) \in G$. Dann ist $f$ genau dann in $z_0$ komplex differenzierbar, wenn $f$ in $(x_0, y_0)$ total (reell) differenzierbar ist und die \textbf{Cauchy-Riemann-DGL} gelten:
 \[
     \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{und} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
 \]
@@ -56,3 +54,12 @@ Die reelle Jacobi-Matrix hat in diesem Fall die spezielle Form $Df(x_0, y_0) = \
     \item Die komplexe Konjugation $f(z) = \bar{z}$ ist \textbf{nicht} holomorph (CR-DGL nicht erfüllt).
     \item Ist eine holomorphe Funktion nur reellwertig ($f: \C \to \R$, also $v \equiv 0$), so folgt aus den CR-DGL sofort $\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0$, womit $f$ \textbf{konstant} sein muss.
 \end{itemize}
+
+\vspace{0.5cm}
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 1, Aufgabe 3}]
+Es sei $f: \C \to \C$ holomorph und $\Im(f)$ konstant. Zeige: dann ist $f$ konstant.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 1, Aufgabe 5}]
+Es sei $f(x + \I y) = x^2 - y^2 - 2x + 1 + \I P(x,y)$, wobei $P$ ein reellwertiges Polynom in $x$ und $y$ sei. Für welche $P$ ist $f$ holomorph?
+\end{tcolorbox}

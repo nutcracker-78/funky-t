@@ -30,7 +30,39 @@ Der Konvergenzradius $R$ lässt sich berechnen durch:
     \item Fakultätsreihe: $\sum n! z^n$ konvergiert nur in $z=0 \implies R = 0$.
 \end{itemize}
 
-\subsection{Komplexe Winkelfunktionen}
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 1, Aufgabe 2}]
+Bestimme den Konvergenzradius folgender Potenzreihe:
+\[
+    f(z) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} z^n
+\]
+\end{tcolorbox}
+\vspace{0.3cm}
+
+\begin{satz}{Differenzierbarkeit von Potenzreihen (Satz 3.9)}
+Sei $f(z) = \sum_{n=0}^\infty a_n(z-z_0)^n$ eine Potenzreihe mit Konvergenzradius $R > 0$. Dann gilt:
+\begin{enumerate}
+    \item[i)] Die Ableitung lässt sich gliedweise bilden und ist wieder eine Potenzreihe mit demselben Konvergenzradius $R$:
+    \[ f'(z) = \sum_{n=0}^\infty (n+1)a_{n+1}(z-z_0)^n = \sum_{n=1}^\infty n a_n (z-z_0)^{n-1} \]
+    \item[ii)] $f$ ist holomorph auf dem Konvergenzkreis, also $f \in \mathcal{H}(B_R(z_0))$.
+    \item[iii)] $f$ ist beliebig oft komplex differenzierbar (glatt) für alle $z \in B_R(z_0)$. Die $k$-te Ableitung lautet:
+    \[ f^{(k)}(z) = \sum_{n=k}^\infty n(n-1)\dots(n-k+1) a_n (z-z_0)^{n-k} \]
+    \item[iv)] Die Koeffizienten $a_n$ sind eindeutig durch $f$ und $z_0$ bestimmt via $a_n = \frac{f^{(n)}(z_0)}{n!}$.
+\end{enumerate}
+\end{satz}
+
+\begin{defi}{Ganze Funktion (Def 3.10)}
+Eine auf ganz $\C$ definierte und holomorphe Funktion $f: \C \to \C$ nennt man auch \textbf{ganze Funktion}. \\
+\textit{Beispiele:} Polynome, die Exponentialfunktion, Sinus, Cosinus sowie Sinus hyperbolicus und Cosinus hyperbolicus sind ganze Funktionen.
+\end{defi}
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 2, Aufgabe 2}]
+Es sei $f: \C \to \C$ eine ganze Funktion der Form $f(x+\I y) = g(x) + \I h(y)$ mit $g$ und $h$ reellwertig. Zeige: Dann ist $f$ ein Polynom ersten Grades.
+\end{tcolorbox}
+\vspace{0.3cm}
+
+\subsection{Komplexe Winkelfunktionen und Hyperbelfunktionen}
 
 \begin{defi}{Sinus und Cosinus im Komplexen}
 Wir definieren für $z \in \C$ über absolut konvergente Potenzreihen ($R=\infty$):
@@ -40,13 +72,75 @@ Wir definieren für $z \in \C$ über absolut konvergente Potenzreihen ($R=\infty
 \end{align*}
 \end{defi}
 
-\textbf{Bemerkung (Eulersche Formel und Eigenschaften):}
-Für alle $z \in \C$ gilt die fundamentale Eulersche Identität:
-\[
-    \cos(z) + \I \sin(z) = e^{\I z}
-\]
-Daraus ergeben sich die Darstellungen:
-\[
-    \cos(z) = \frac{e^{\I z} + e^{-\I z}}{2} \quad \text{und} \quad \sin(z) = \frac{e^{\I z} - e^{-\I z}}{2\I}
-\]
-\textbf{Achtung:} Im Gegensatz zum Reellen sind Sinus und Cosinus auf $\C$ \textbf{unbeschränkt}! Betrachtet man z.B. $\cos(\I y)$ für rein imaginäre Zahlen $y \in \R, y \to \infty$, wächst die Funktion exponentiell ($\sim \frac{e^y}{2}$). Zudem gilt im Allgemeinen \textbf{nicht} $\cos(z) = \Re(e^{\I z})$ für $z \notin \R$.
+\begin{defi}{Hyperbelfunktionen (Def 3.7)}
+Analog definieren wir für $z \in \C$ den Sinus hyperbolicus und Cosinus hyperbolicus:
+\[ \sinh(z) = \frac{1}{2}(e^z - e^{-z}) = \sum_{n=0}^\infty \frac{z^{2n+1}}{(2n+1)!}, \quad \cosh(z) = \frac{1}{2}(e^z + e^{-z}) = \sum_{n=0}^\infty \frac{z^{2n}}{(2n)!} \]
+\end{defi}
+
+\textbf{Bemerkung 3.8 (Zusammenhänge):}
+Zwischen den trigonometrischen Funktionen und den Hyperbelfunktionen bestehen folgende Beziehungen:
+\begin{align*}
+    \sinh(\I z) &= \I \sin(z)  & \sin(z) &= -\I \sinh(\I z) \\
+    \cosh(\I z) &= \cos(z) & \cos(z) &= \cosh(\I z)
+\end{align*}
+
+\textbf{Bemerkung 3.12 (Additionstheoreme und Eigenschaften):}
+Für alle $w, z \in \C$ und $z = x + \I y$ gelten folgende wichtige Identitäten:
+\begin{enumerate}
+    \item \textbf{Eulersche Formel:} $\cos(z) + \I \sin(z) = e^{\I z}$. Daraus folgt:
+    \[ \cos(z) = \frac{e^{\I z} + e^{-\I z}}{2} \quad \text{und} \quad \sin(z) = \frac{e^{\I z} - e^{-\I z}}{2\I} \]
+    \item \textbf{Darstellung der Exponentialfunktion:} $e^z = e^x (\cos y + \I \sin y)$ und $|e^z| = e^{\Re z}$.
+    \item \textbf{Additionstheoreme:}
+    \begin{align*}
+        \cos(w+z) &= \cos w \cos z - \sin w \sin z \\
+        \sin(w+z) &= \sin w \cos z + \cos w \sin z
+    \end{align*}
+    \item \textbf{Real- und Imaginärteil:}
+    \begin{align*}
+        \Re \cos(x+\I y) &= \cos x \cosh y & \Im \cos(x+\I y) &= -\sin x \sinh y \\
+        \Re \sin(x+\I y) &= \sin x \cosh y & \Im \sin(x+\I y) &= \cos x \sinh y
+    \end{align*}
+    \item \textbf{Nullstellen:} 
+    $\cos z = 0 \iff z \in \{ (k + \frac{1}{2})\pi : k \in \Z \}$ und $\sin z = 0 \iff z \in \{ k\pi : k \in \Z \}$.
+    \item \textbf{Periodizität und Symmetrie:}
+    $\sin(z + 2\pi) = \sin z$, $\cos(z + 2\pi) = \cos z$. Zudem gilt:
+    $\sin(z + \frac{\pi}{2}) = \cos z$ und $\cos(z + \frac{\pi}{2}) = -\sin z$.
+\end{enumerate}
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 2, Aufgabe 1}]
+Zeige folgende Identitäten aus Bemerkung 3.12:
+\begin{enumerate}
+    \item[a)] $\cos(w+z) = \cos w \cos z - \sin w \sin z$
+    \item[b)] $e^z = e^{\Re z}(\cos(\Im z) + \I \sin(\Im z))$
+    \item[c)] $|e^z| = e^{\Re z}$
+    \item[d)] $\Re \cos(x+\I y) = \cos x \cosh y$
+\end{enumerate}
+\end{tcolorbox}
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 1, Aufgabe 4}]
+Zeige: $\sin^2(z) + \cos^2(z) = 1$ für alle $z \in \C$.
+\end{tcolorbox}
+\vspace{0.3cm}
+
+\begin{defi}{Tangens und Cotangens (Def 3.13)}
+Wir definieren für $z \in \C \setminus \{(k+\frac{1}{2})\pi : k \in \Z\}$ den Tangens und für $z \in \C \setminus \{k\pi : k \in \Z\}$ den Cotangens als:
+\[ \tan(z) := \frac{\sin(z)}{\cos(z)}, \quad \cot(z) := \frac{\cos(z)}{\sin(z)} \]
+Es gilt $\tan \in \mathcal{H}\left(\C \setminus \{(k+\frac{1}{2})\pi : k \in \Z\}\right)$ und $\cot \in \mathcal{H}(\C \setminus \{k\pi : k \in \Z\})$.
+\end{defi}
+
+\textbf{Bemerkung 3.14 (Darstellung und Ableitung):}
+Mithilfe der Eulerschen Formel gilt:
+\[ \tan(z) = \frac{1}{\I} \frac{e^{2\I z}-1}{e^{2\I z}+1}, \quad \cot(z) = \I \frac{e^{2\I z}+1}{e^{2\I z}-1} \]
+Die Ableitungen berechnen sich zu:
+\[ \tan'(z) = \frac{1}{\cos^2(z)} = 1 + \tan^2(z), \quad \cot'(z) = \frac{-1}{\sin^2(z)} = -(1 + \cot^2(z)) \]
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=yellow!5!white, colframe=orange!75!black, fonttitle=\bfseries, title={Übungsblatt 2, Aufgabe 1 (Fortsetzung)}]
+Zeige weiterhin:
+\begin{enumerate}
+    \item[e)] $\tan(z) = \frac{1}{\I} \frac{e^{2\I z}-1}{e^{2\I z}+1}$
+    \item[f)] $\tan'(z) = 1 + \tan^2(z)$
+\end{enumerate}
+\end{tcolorbox}
