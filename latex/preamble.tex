@@ -20,6 +20,20 @@
   fonttitle=\bfseries, title={Satz: #1}, arc=1mm, size=small
 }
 
+% --- Zusätzliche Boxen für die Übungsvorbereitung ---
+
+% Rezept-Box (Gelb) für Algorithmen und Vorgehensweisen
+\newtcolorbox{rezept}[1]{
+  colback=yellow!5!white, colframe=yellow!60!black, 
+  fonttitle=\bfseries, title={Rezept: #1}, arc=1mm, size=small
+}
+
+% Warnungs-Box (Rot) für häufige Fehler und wichtige Voraussetzungen
+\newtcolorbox{warnung}[1]{
+  colback=red!5!white, colframe=red!75!black, 
+  fonttitle=\bfseries, title={Achtung: #1}, arc=1mm, size=small
+}
+
 % --- Deine Abkürzungen (Makros) ---
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
