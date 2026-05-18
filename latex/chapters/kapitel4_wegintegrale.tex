@@ -90,3 +90,67 @@ Ist der Weg ein Integrationsweg, also $\gamma \in C_{st}^1([a,b]; \C)$, so verei
     L(\gamma) = \int_a^b |\gamma'(t)| \, dt < \infty
 \]
 \end{satz}
+
+% --- Neu aus der Vorlesung: Parameter-Transformationen ---
+
+\begin{satz}{4.15 Eigenschaften des Wegintegrals}
+Sei $\gamma \in C_{st}^1([a,b]; \C)$, $f, g: Sp(\gamma) \to \C$ stetig und $\alpha, \beta \in \C$. Dann gilt:
+\begin{itemize}
+    \item[i)] \textbf{Linearität:} $\int_\gamma (\alpha f(z) + \beta g(z)) \, \dz = \alpha \int_\gamma f(z) \, \dz + \beta \int_\gamma g(z) \, \dz$.
+    \item[ii)] \textbf{Standardabschätzung:} $\left| \int_\gamma f(z) \, \dz \right| \le \int_\gamma |f(z)| \, |dz| \le \max_{z \in Sp(\gamma)} |f(z)| \cdot L(\gamma)$.
+\end{itemize}
+\end{satz}
+
+\begin{defi}{4.16 Zusammengesetzte Wege und entgegengesetzte Wege}
+\begin{itemize}
+    \item[i)] Seien $\gamma_1: [a,b] \to \C$ und $\gamma_2: [b,c] \to \C$ Wege mit $\gamma_1(b) = \gamma_2(b)$. Der \textbf{zusammengesetzte Weg} $\gamma = \gamma_1 \cdot \gamma_2$ ist definiert als:
+    \[
+    \gamma(t) = \begin{cases} \gamma_1(t) & t \in [a,b] \\ \gamma_2(t) & t \in [b,c] \end{cases}
+    \]
+    \item[ii)] Für einen Weg $\gamma: [a,b] \to \C$ ist der \textbf{entgegengesetzte Weg} $\overleftarrow{\gamma}: [a,b] \to \C$ definiert durch $\overleftarrow{\gamma}(t) = \gamma(a+b-t)$.
+\end{itemize}
+\end{defi}
+
+\begin{satz}{4.17 Additivität des Integrals}
+Sei $\gamma = \gamma_1 \cdot \gamma_2$ ein zusammengesetzter Weg. Dann gilt:
+\[
+    \int_\gamma f(z) \, \dz = \int_{\gamma_1} f(z) \, \dz + \int_{\gamma_2} f(z) \, \dz
+\]
+\end{satz}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bsp 4.18: Parametrisierung der Kreislinie $\partial B_r(z_0)$}]
+Die Kreislinie kann unterschiedlich parametrisiert werden:
+\begin{itemize}
+    \item[i)] $\gamma_1(t) = z_0 + re^{2\pi\I t}, t \in [0,1]$
+    \item[ii)] $\gamma_2(t) = z_0 + re^{\I t}, t \in [0,2\pi]$
+    \item[iii)] $\gamma_3$ (stückweise, siehe Vorlesungsskript)
+    \item[iv)] $\gamma_4(t) = z_0 + re^{2\pi\I t}, t \in[1/2, 3/2]$
+    \item[v)] $\gamma_5(t) = z_0 + re^{-2\pi\I t}, t \in [0,1]$ (durchläuft Kreis im Uhrzeigersinn).
+\end{itemize}
+Es gilt: $\int_{\gamma_1} f(z) dz = \int_{\gamma_2} f(z) dz = \int_{\gamma_3} f(z) dz = \int_{\gamma_4} f(z) dz = -\int_{\gamma_5} f(z) dz$.
+\end{tcolorbox}
+
+\begin{defi}{4.19 Parameter-Transformation}
+Seien $\gamma: [a,b] \to \C$ und $\tilde{\gamma}: [\tilde{a},\tilde{b}] \to \C$ Wege. Eine bijektive Abbildung $\varphi: [\tilde{a},\tilde{b}] \to [a,b]$ heißt \textbf{Parameter-Transformation} (oder $C_{st}^1$-Umparametrisierung), falls $\varphi \in C_{st}^1$ und $\varphi' > 0$ gilt. 
+Gilt $\tilde{\gamma}(t) = \gamma(\varphi(t))$, so entsteht $\tilde{\gamma}$ durch Umparametrisierung aus $\gamma$.
+\end{defi}
+
+\begin{satz}{4.20 Invarianz und Richtung}
+Sei $\tilde{\gamma}$ eine $C_{st}^1$-Umparametrisierung von $\gamma$. Dann gilt:
+\begin{itemize}
+    \item[i)] $Sp(\gamma) = Sp(\tilde{\gamma})$ und die End-/Anfangspunkte sind gleich.
+    \item[ii)] $\int_{\tilde{\gamma}} f(z) \, \dz = \int_{\gamma} f(z) \, \dz$.
+    \item[iii)] Für den entgegengesetzten Weg gilt: $\int_{\overleftarrow{\gamma}} f(z) \, \dz = -\int_{\gamma} f(z) \, \dz$.
+\end{itemize}
+\end{satz}
+
+\begin{satz}{4.21 Vereinfachung der Notation}
+Sei $\gamma$ ein geschlossener $C_{st}^1$-Weg, der injektiv auf $[a,b)$ ist und gegen den Uhrzeigersinn durchlaufen wird. Sei $\Gamma = Sp(\gamma)$. Dann schreibt man kurz $\int_{\Gamma} f(z) \, \dz := \int_{\gamma} f(z) \, \dz$. 
+\end{satz}
+
+\begin{satz}{4.22 Vertauschungssatz}
+Sei $\gamma$ ein $C_{st}^1$-Weg und $f_n \to f$ gleichmäßig auf $Sp(\gamma)$. Dann gilt:
+\[
+    \lim_{n \to \infty} \int_\gamma f_n(z) \, \dz = \int_\gamma f(z) \, \dz
+\]
+\end{satz}

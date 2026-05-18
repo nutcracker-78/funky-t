@@ -1,0 +1,57 @@
+% ==========================================
+% Kapitel 5: Stammfunktionen
+% ==========================================
+\section{Stammfunktionen}
+
+\begin{defi}{5.1 Wegzusammenhang und Gebiete}
+Eine Menge $G \subset \C$ heißt \textbf{wegzusammenhängend}, falls es für alle $z, w \in G$ einen Weg $\gamma: [a,b] \to G$ gibt mit $\gamma(a) = z$ und $\gamma(b) = w$.
+\begin{itemize}
+    \item $G \subset \C$ heißt \textbf{Gebiet}, falls $G$ offen und wegzusammenhängend ist.
+\end{itemize}
+\end{defi}
+
+\begin{defi}{5.3 Stammfunktion}
+Sei $G \subset \C$ offen und $f \in C(G; \C)$. Eine holomorphe Funktion $F: G \to \C$ heißt \textbf{Stammfunktion} zu $f$, falls $F'(z) = f(z)$ für alle $z \in G$ gilt.
+\end{defi}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bsp. 5.4 Beispiele für Stammfunktionen}]
+\begin{itemize}
+    \item[i)] $f(z) = z^n$ ($n \in \N_0$): $F(z) = \frac{1}{n+1} z^{n+1}$.
+    \item[ii)] $f(z) = z^n$ ($n \in \Z \setminus \{-1\}$) auf $G = \C \setminus \{0\}$: $F(z) = \frac{1}{n+1} z^{n+1}$.
+    \item[iii)] $f(z) = e^{\alpha z}$ ($\alpha \neq 0$): $F(z) = \frac{1}{\alpha} e^{\alpha z}$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{satz}{5.5 Äquivalenzsatz für Stammfunktionen}
+Sei $G \subset \C$ ein Gebiet und $f \in C(G; \C)$. Dann sind folgende Aussagen äquivalent:
+\begin{itemize}
+    \item[i)] $f$ besitzt eine Stammfunktion $F$ auf $G$.
+    \item[ii)] \textbf{Wegunabhängigkeit:} Das Integral $\int_\gamma f(z) \, \dz$ ist wegunabhängig für alle $\gamma_1, \gamma_2 \in C_{st}^1$ mit gleichem Anfangs- und Endpunkt in $G$.
+    \item[iii)] \textbf{Wegintegral über geschlossene Wege:} $\int_\gamma f(z) \, \dz = 0$ für alle geschlossenen $C_{st}^1$-Wege $\gamma$ in $G$.
+\end{itemize}
+Gilt eine dieser Aussagen, so folgt für jeden Weg $\gamma: [a,b] \to G$:
+\[
+    \int_\gamma f(z) \, \dz = F(\gamma(b)) - F(\gamma(a))
+\]
+\end{satz}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title={Bemerkung 5.6}]
+Satz 5.5 gilt analog auch für beliebige offene Mengen $G$. Im Beweis von (ii) $\Rightarrow$ (i) betrachtet man hierfür die einzelnen Wegzusammenhangskomponenten.
+\end{tcolorbox}
+
+\begin{defi}{5.8 Sternförmige Mengen}
+Sei $G \subset \C$.
+\begin{itemize}
+    \item[i)] $G$ heißt \textbf{konvex}, falls für zwei Punkte $z, w \in G$ auch die Verbindungsstrecke $\overline{zw} \subset G$ liegt.
+    \item[ii)] $G$ heißt \textbf{sternförmig}, falls ein $z_0 \in G$ existiert (der sogenannte \textbf{Sternpunkt}), sodass für alle $z \in G$ die Strecke $\overline{z_0 z} \subset G$ liegt.
+\end{itemize}
+Es gilt die Implikation: \textit{konvex $\Rightarrow$ sternförmig $\Rightarrow$ wegzusammenhängend}.
+\end{defi}
+
+\begin{satz}{5.10 Existenz von Stammfunktionen}
+Sei $G \subset \C$ ein sternförmiges Gebiet mit Sternpunkt $z_0$ und $f \in C(G; \C)$. Gilt für jedes in $G$ gelegene abgeschlossene Dreieck $\Delta$, für welches $z_0$ eine Ecke ist, dass
+\[
+    \int_{\partial \Delta} f(z) \, \dz = 0,
+\]
+so besitzt $f$ eine Stammfunktion auf $G$.
+\end{satz}

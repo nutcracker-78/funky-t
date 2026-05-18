@@ -1,0 +1,32 @@
+% ==========================================
+% Kapitel 6: Komplexer Logarithmus
+% ==========================================
+\section{Komplexer Logarithmus}
+
+\subsection*{Motivation: Stammfunktion des Logarithmus}
+Das Ziel ist es, eine Stammfunktion zu $f(z) = \frac{1}{z}$ auf dem Gebiet $\C \setminus (-\infty, 0]$ zu finden. Da die Exponentialfunktion $\exp(z) = e^x(\cos y + \I \sin y)$ periodisch mit $2\pi\I$ ist, ist sie auf einem Streifen der Höhe $2\pi$ bijektiv.
+
+\begin{defi}{6.1 Komplexer Logarithmus}
+Sei $\theta \in \R$ fest. Die Umkehrfunktion der Exponentialfunktion
+\[
+    \exp: \{z \in \C : \theta < \operatorname{Im}(z) < \theta + 2\pi\} \longrightarrow \C \setminus \{e^{\I \theta}t : t \ge 0\}
+\]
+heißt ein \textbf{Zweig des komplexen Logarithmus}.
+\end{defi}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Der Hauptzweig}]
+Die Umkehrfunktion zu 
+\[
+    \exp: \{z \in \C : -\pi < \operatorname{Im}(z) < \pi\} \longrightarrow \C \setminus (-\infty, 0]
+\]
+heißt \textbf{Hauptzweig des komplexen Logarithmus}, kurz \textbf{log}.
+Es gilt:
+\[
+    \log: \C \setminus (-\infty, 0] \longrightarrow \{z \in \C : -\pi < \operatorname{Im}(z) < \pi\}
+\]
+Ist kein spezieller Zweig angegeben, so bezeichnet \textbf{log} stets den Hauptzweig.
+\end{tcolorbox}
+
+\begin{warnung}{Zweige des Logarithmus}
+Andere Zweige werden ebenfalls oft als "log" bezeichnet, wobei dann der gewählte Bereich (Zweig) spezifiziert werden muss. Die Unstetigkeit beim "Durchschreiten" des Schnitts ($\theta$ bis $\theta + 2\pi$) verdeutlicht, warum man auf die "geschlitzte Ebene" $\C \setminus \{e^{\I \theta}t : t \ge 0\}$ angewiesen ist.
+\end{warnung}
