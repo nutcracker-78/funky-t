@@ -1,0 +1,61 @@
+\section{Der komplexe Logarithmus und die Windungszahl}
+
+\subsection*{\S 1. Die Windungszahl}
+
+\noindent\textbf{Def: 6.1 (Windungszahl / Index)} \\
+Sei $\gamma: [a,b] \rightarrow \mathbb{C}$ ein geschlossener Integrationsweg (stückweiser $C^1$-Weg) und $z_0 \in \mathbb{C} \setminus \text{Sp}(\gamma)$ ein Punkt außerhalb der Spur von $\gamma$. Dann heißt die komplexe Zahl
+\[
+n(\gamma, z_0) := \frac{1}{2\pi i} \oint_{\gamma} \frac{1}{z - z_0} \, dz
+\]
+die \textit{Windungszahl} (oder der \textit{Index}) von $\gamma$ bezüglich $z_0$.
+
+\vspace{1em}
+\noindent\textbf{Satz: 6.2 (Ganzzahligkeit der Windungszahl)} \\
+Für jeden geschlossenen Integrationsweg $\gamma: [a,b] \rightarrow \mathbb{C}$ und jeden Punkt $z_0 \notin \text{Sp}(\gamma)$ gilt stets:
+\[
+n(\gamma, z_0) \in \mathbb{Z}
+\]
+Die Windungszahl gibt anschaulich an, wie oft der Weg $\gamma$ den Punkt $z_0$ im mathematisch positiven Sinn (gegen den Uhrzeigersinn) umkreist.
+
+\vspace{1em}
+\noindent\textbf{Beweis:} \\
+Wir definieren eine komplexe Hilfsfunktion $g: [a,b] \rightarrow \mathbb{C}$ über das folgende unbestimmte Integral:
+\[
+g(t) := \int_{a}^{t} \frac{\gamma'(s)}{\gamma(s) - z_0} \, ds
+\]
+Nach dem Hauptsatz der Differential- und Integralrechnung ist $g$ stückweise differenzierbar mit der Ableitung $g'(t) = \frac{\gamma'(t)}{\gamma(t) - z_0}$ für fast alle $t \in [a,b]$. Nun betrachten wir die Hilfsfunktion $h(t) := (\gamma(t) - z_0) \cdot e^{-g(t)}$. Ableiten nach der Produkt- und Kettenregel liefert:
+\[
+h'(t) = \gamma'(t) \cdot e^{-g(t)} + (\gamma(t) - z_0) \cdot \big(-g'(t)\big) \cdot e^{-g(t)}
+\]
+\[
+= \gamma'(t) \cdot e^{-g(t)} - (\gamma(t) - z_0) \cdot \frac{\gamma'(t)}{\gamma(t) - z_0} \cdot e^{-g(t)} = 0
+\]
+Da die Ableitung bis auf die endlich vielen Knickstellen des Weges überall verschwindet und $h$ stetig ist, folgt, dass $h(t)$ auf dem gesamten Intervall $[a,b]$ konstant ist. Es gilt somit insbesondere $h(b) = h(a)$.
+
+Wegen $g(a) = 0$ erhalten wir $h(a) = (\gamma(a) - z_0) \cdot e^0 = \gamma(a) - z_0$. Da der Weg $\gamma$ geschlossen ist, gilt zudem $\gamma(b) = \gamma(a)$. Einsetzen liefert:
+\[
+(\gamma(b) - z_0) \cdot e^{-g(b)} = \gamma(a) - z_0 \implies (\gamma(a) - z_0) \cdot e^{-g(b)} = \gamma(a) - z_0
+\]
+Da der Punkt $z_0$ nicht auf der Spur liegt, ist $\gamma(a) - z_0 \neq 0$. Wir können den Term kürzen und erhalten:
+\[
+e^{-g(b)} = 1 \implies g(b) = 2\pi i \cdot k \quad \text{für ein } k \in \mathbb{Z}
+\]
+Nach Definition des komplexen Wegintegrals entspricht $n(\gamma, z_0) = \frac{1}{2\pi i} g(b) = k$. Somit ist $n(\gamma, z_0)$ eine ganze Zahl. \hfill $\square$
+
+
+\vspace{1em}
+\subsection*{\S 2. Der komplexe Logarithmus}
+
+\noindent\textbf{Def: 6.3 (Zweig des Logarithmus)} \\
+Sei $G \subset \mathbb{C}$ offen und $0 \notin G$. Eine holomorphe Funktion $f: G \rightarrow \mathbb{C}$ heißt ein \textit{Zweig des komplexen Logarithmus} auf $G$, wenn gilt:
+\[
+e^{f(z)} = z \quad \text{für alle } z \in G
+\]
+
+\vspace{1em}
+\noindent\textbf{Bemerkung: 6.4 (Hauptzweig)} \\
+Auf der geschlitzten Ebene $G = \mathbb{C} \setminus (-\infty, 0]$ existiert ein standardisierter Zweig, genannt der \textit{Hauptzweig des Logarithmus} $\log(z)$, definiert durch:
+\[
+\log(z) = \ln|z| + i \cdot \arg(z)
+\]
+wobei das Argument im Intervall $\arg(z) \in (-\pi, \pi)$ gewählt wird. Die Ableitung des Logarithmuszweiges entspricht stets $\frac{d}{dz}\log(z) = \frac{1}{z}$.
