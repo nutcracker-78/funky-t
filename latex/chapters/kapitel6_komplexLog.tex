@@ -30,3 +30,75 @@ Ist kein spezieller Zweig angegeben, so bezeichnet \textbf{log} stets den Hauptz
 \begin{warnung}{Zweige des Logarithmus}
 Andere Zweige werden ebenfalls oft als "log" bezeichnet, wobei dann der gewählte Bereich (Zweig) spezifiziert werden muss. Die Unstetigkeit beim "Durchschreiten" des Schnitts ($\theta$ bis $\theta + 2\pi$) verdeutlicht, warum man auf die "geschlitzte Ebene" $\C \setminus \{e^{\I \theta}t : t \ge 0\}$ angewiesen ist.
 \end{warnung}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bemerkung 6.2: Eigenschaften des Hauptzweiges}]
+\begin{itemize}
+    \item[i)] $\log z = \ln|z| + \I \varphi$, wobei $\varphi \in (-\pi, \pi)$ das Argument von $z$ ist. Es gilt $e^{\log z} = z$ für alle $z \in \C \setminus (-\infty, 0]$.
+    \item[ii)] $\log e^z = z$ für alle $z \in \C$ mit $-\pi < \operatorname{Im}(z) < \pi$.
+    \item[iii)] $\log e^z = z - 2\pi\I k$ für $-\pi + 2\pi k < \operatorname{Im}(z) < \pi + 2\pi k$.
+    \item[iv)] Für $\log(-1)$ gilt der Hauptzweig nicht mehr. Mit Zweigen $\theta \neq -\pi$ gilt: $\log(-1) = \I\pi + 2\pi\I k$ für $k \in \Z$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bemerkung 6.3: Logarithmus-Rechenregeln}]
+\begin{itemize}
+    \item[i)] Reeller Log $\neq$ komplexer Log.
+    \item[ii)] Der Hauptzweig ist nicht für $\log(z^2) = 2\log z$ allgemein definiert, da z.B. $\log(i) = \I\pi/2$, aber $\log(i^2) = \log(-1) = \I\pi \neq 2(\I\pi/2) = \I\pi$ (hier passt es, aber für andere Zweige/Werte nicht).
+    \item[iii)] Für $w, z \in \C \setminus (-\infty, 0]$ mit geeigneten Argumenten gilt $\log(wz) = \log w + \log z$.
+    \item[iv)] Allgemein gilt $\log(wz) - \log w - \log z \in \{-2\pi\I, 0, 2\pi\I\}$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{satz}{6.4 Holomorphie des Hauptzweiges}
+Sei $\log$ der Hauptzweig des komplexen Logarithmus auf $\C \setminus (-\infty, 0]$. Dann ist $\log \in H(\C \setminus (-\infty, 0])$ mit $\log'(z) = \frac{1}{z}$. 
+Für $|z|<1$ gilt die Potenzreihenentwicklung:
+\[
+    \log(1+z) = \sum_{k=1}^\infty \frac{(-1)^{k-1}}{k} z^k = z - \frac{z^2}{2} + \frac{z^3}{3} - \dots
+\]
+\end{satz}
+
+\begin{satz}{6.5 Integral des Logarithmus}
+Ist $\gamma: [a,b] \to \C \setminus (-\infty, 0]$ ein $C_{st}^1$-Weg, so gilt:
+\[
+    \int_\gamma \frac{1}{z} \, \dz = \log \gamma(b) - \log \gamma(a)
+\]
+Insbesondere ist $\int_\gamma \frac{1}{z} \, \dz = 0$ für jeden geschlossenen Weg mit $Sp(\gamma) \subset \C \setminus (-\infty, 0]$.
+\end{satz}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bemerkungen 6.6 \& 6.7}]
+\begin{itemize}
+    \item[6.6] Andere Zweige des Logarithmus lassen sich auf den Hauptzweig zurückführen und sind ebenfalls holomorph mit Ableitung $1/z$.
+    \item[6.7] Ist $z \in \C \setminus \{0\}$, so heißt jede Zahl $w$ mit $\exp(w) = z$ ein Logarithmus von $z$. Dieser ist eindeutig bis auf Addition von $2\pi\I k, k \in \Z$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{defi}{6.8 Komplexe Potenzen}
+Sei $a \in \C \setminus \{0\}, b \in \C$ und $\widetilde{\log} a$ ein Logarithmus von $a$. Dann ist
+\[
+    a^b := \exp(b \widetilde{\log} a)
+\]
+die (eine) $b$-te Potenz von $a$. Ist $b = 1/n$ ($n \in \N$), so heißt dies \textbf{$n$-te Wurzel}.
+\end{defi}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bemerkung 6.9: Eigenschaften der Potenz}]
+\begin{itemize}
+    \item[i)] $\widetilde{\log} a$ ist bis auf $2\pi\I k$ definiert $\implies a^b$ eindeutig bis auf Multiplikation mit $\exp(2\pi\I k b)$.
+    \item[ii)] Notation $e^b$ meint $\exp(b)$, außer es ist explizit etwas anderes gemeint.
+    \item[iii)] $a^{1/n}$ ist die $n$-te Wurzel, eindeutig bis auf Multiplikation mit $\exp(2\pi\I k / n)$.
+    \item[iv)] Bei gleichem Logarithmus-Zweig gilt $a^{b_1} a^{b_2} = a^{b_1+b_2}$.
+    \item[v)] Beispiel: $i^i = \exp(i \log i) = \exp(i \cdot \I\pi/2) = e^{-\pi/2}$ (reell!).
+\end{itemize}
+\end{tcolorbox}
+
+\begin{defi}{6.10 Zweig der komplexen Potenz}
+Sei $\log$ ein Zweig des Logarithmus. Dann heißt $z \mapsto z^b := \exp(b \log z)$ ein \textbf{Zweig der $b$-ten Potenz}. Wird der Hauptzweig verwendet, spricht man vom Hauptzweig der Potenz.
+\end{defi}
+
+\begin{satz}{6.11 Ableitung komplexer Potenzen}
+Sei $b \in \C$. Dann ist jeder Zweig der $b$-ten Potenz holomorph und es gilt:
+\[
+    \frac{d}{dz} (z^b) = b z^{b-1}
+\]
+(wobei $z^{b-1}$ mit dem gleichen Zweig wie $z^b$ definiert ist).
+\end{satz}
+
