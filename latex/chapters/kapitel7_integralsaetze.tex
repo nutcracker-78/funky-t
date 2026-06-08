@@ -1,0 +1,41 @@
+% ==========================================
+% Kapitel 7: Der Cauchysche Integralsatz
+% ==========================================
+\section{Der Cauchysche Integralsatz}
+
+\begin{satz}{7.1 Integrallemma von Goursat}
+Sei $G \subset \C$ offen und $f \in H(G)$. Dann gilt für den Rand eines jeden Dreiecks $\Delta$, das ganz in $G$ liegt:
+\[
+    \int_{\partial \Delta} f(z) \, \dz = 0
+\]
+\end{satz}
+
+\begin{satz}{7.2 Existenz von Stammfunktionen}
+Sei $G \subset \C$ offen und $f \in H(G)$.
+\begin{itemize}
+    \item[i)] $f$ besitzt eine lokale Stammfunktion auf $G$.
+    \item[ii)] Ist $G$ sternförmig, so besitzt $f$ eine Stammfunktion auf $G$.
+\end{itemize}
+\end{satz}
+
+\begin{satz}{7.3 Cauchyscher Integralsatz für sternförmige Gebiete}
+Sei $G \subset \C$ ein offenes, sternförmiges Gebiet und $f \in H(G)$. Dann gilt für jeden geschlossenen $C_{st}^1$-Weg $\gamma$ mit $Sp(\gamma) \subset G$:
+\[
+    \int_\gamma f(z) \, \dz = 0
+\]
+\end{satz}
+
+\begin{tcolorbox}[colback=yellow!5!white, colframe=yellow!60!black, title={Bemerkung 7.4 \& 7.5}]
+\begin{itemize}
+    \item[7.4] Der Satz gilt nicht für Gebiete mit "Löchern". Beispiel: $G = \C \setminus \{0\}$, $f(z) = 1/z$. Hier ist $\int_\gamma \frac{1}{z} \dz = 2\pi\I \neq 0$ für die Kreislinie.
+    \item[7.5] Beispiel: $G = \{z \in \C : \operatorname{Re}(z) > -2\}$, $f(z) = \frac{1}{z+2}$. Da $G$ sternförmig ist, gilt $\int_\gamma f(z) \dz = 0$ für jede geschlossene Kurve in $G$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{satz}{7.6 Verschärfung (Goursat)}
+Sei $G \subset \C$ offen, $z_0 \in G$ und $f \in H(G \setminus \{z_0\})$, aber $f$ stetig auf ganz $G$. Dann gilt $\int_{\partial \Delta} f(z) \dz = 0$ für jedes Dreieck $\Delta \subset G$.
+\end{satz}
+
+\begin{satz}{7.7}
+Die Sätze 7.2 und 7.3 bleiben gültig, wenn die Voraussetzung $f \in H(G)$ durch $f \in H(G \setminus \{z_0\}) \cap C^0(G, \C)$ ersetzt wird.
+\end{satz}

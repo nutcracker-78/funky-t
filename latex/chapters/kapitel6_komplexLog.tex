@@ -102,3 +102,33 @@ Sei $b \in \C$. Dann ist jeder Zweig der $b$-ten Potenz holomorph und es gilt:
 (wobei $z^{b-1}$ mit dem gleichen Zweig wie $z^b$ definiert ist).
 \end{satz}
 
+% --- Fortführung Kapitel 6: Windungszahl ---
+
+\begin{defi}{6.12 Umlaufzahl (Windungszahl)}
+Sei $G \subset \C$ und $\gamma: [a,b] \to G$ ein geschlossener $C_{st}^1$-Weg. Sei $z_0 \notin Sp(\gamma)$. Dann heißt
+\[
+    n(\gamma, z_0) := \frac{1}{2\pi\I} \int_\gamma \frac{1}{z-z_0} \, \dz
+\]
+die \textbf{Umlaufzahl} oder \textbf{Windungszahl} des Weges $\gamma$ um $z_0$. Es gilt $n(\gamma, z_0) \in \Z$.
+\end{defi}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Intuition zur Windungszahl}]
+Die Windungszahl misst, wie oft sich der Weg $\gamma$ um $z_0$ herumwindet (gegen den Uhrzeigersinn positiv).
+\begin{itemize}
+    \item Der Imaginärteil des Integrals $\int_\gamma \frac{1}{z-z_0} \dz$ entspricht der Zunahme des Arguments entlang des Weges.
+    \item Da $\gamma$ geschlossen ist, folgt für die Windungszahl:
+    \[
+        n(\gamma, z_0) = \frac{1}{2\pi} \cdot \text{Zunahme des Arguments} = \frac{1}{2\pi} \operatorname{Im} \left( \int_\gamma \frac{1}{z-z_0} \, \dz \right)
+    \]
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title={Beweisskizze für $n(\gamma, z_0) \in \Z$}]
+Betrachte die Funktion $\varphi(t) := \exp \left( \int_a^t \frac{\gamma'(s)}{\gamma(s)-z_0} \, ds \right)$.
+\begin{itemize}
+    \item Man zeigt, dass $\frac{\varphi(t)}{\gamma(t)-z_0}$ konstant ist, da die Ableitung nach $t$ verschwindet.
+    \item Wegen $\gamma(a) = \gamma(b)$ folgt $\varphi(a) = 1$ und $\varphi(b) = \exp \left( \int_\gamma \frac{1}{z-z_0} \, \dz \right)$.
+    \item Da $\varphi(b) = \varphi(a) \cdot \frac{\gamma(b)-z_0}{\gamma(a)-z_0} = 1$, muss der Exponent ein Vielfaches von $2\pi\I$ sein, woraus $n(\gamma, z_0) \in \Z$ folgt.
+\end{itemize}
+\end{tcolorbox}
+
