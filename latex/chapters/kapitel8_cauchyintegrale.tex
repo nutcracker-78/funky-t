@@ -1,0 +1,47 @@
+% ==========================================
+% Kapitel 8: Cauchysche Integralformel und Folgen
+% ==========================================
+\section{Cauchysche Integralformel und Folgen}
+
+\begin{satz}{8.1 Cauchysche Integralformel für sternförmige Gebiete}
+Sei $G$ ein sternförmiges Gebiet, $f \in H(G)$ und $\gamma$ ein geschlossener Integrationsweg in $G$. Dann gilt:
+\[
+    \frac{1}{2\pi\I} \int_\gamma \frac{f(w)}{w-z} \, dw = n(\gamma, z) \cdot f(z) \quad \forall z \in G \setminus Sp(\gamma)
+\]
+\end{satz}
+
+\begin{satz}{8.2 Cauchysche Integralformel für Kreisscheiben}
+Sei $G$ offen, $f \in H(G)$ und $z_0 \in G$ mit $\overline{B_r(z_0)} \subset G$. Dann gilt:
+\[
+    f(z) = \frac{1}{2\pi\I} \int_{\partial B_r(z_0)} \frac{f(w)}{w-z} \, dw \quad \forall z \in B_r(z_0)
+\]
+\end{satz}
+
+\begin{satz}{8.3 Mittelwerteigenschaft}
+Sei $G$ offen, $f \in H(G)$ und $\overline{B_r(z_0)} \subset G$. Dann folgt:
+\[
+    f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{\I t}) \, dt
+\]
+\end{satz}
+
+\begin{satz}{8.5 Differenzierbarkeit unter dem Integral}
+Sei $D \subset G$ offen, $\gamma$ ein Integrationsweg in $G$ und $g: Sp(\gamma) \times D \to \C$ stetig. Ist $z \mapsto g(w, z)$ holomorph mit Ableitung $g_z(w, z)$, so ist $G(z) := \int_\gamma g(w, z) \, dw$ holomorph mit:
+\[
+    G'(z) = \int_\gamma \frac{\partial}{\partial z} g(w, z) \, dw
+\]
+\end{satz}
+
+\begin{satz}{8.6 Unendliche Differenzierbarkeit}
+Sei $G$ offen, $f \in H(G)$. Dann ist $f$ unendlich oft komplex differenzierbar. Für $\overline{B_r(z_0)} \subset G$ gilt:
+\[
+    f^{(n)}(z) = \frac{n!}{2\pi\I} \int_{\partial B_r(z_0)} \frac{f(w)}{(w-z)^{n+1}} \, dw \quad \forall z \in B_r(z_0), n \in \N_0
+\]
+\end{satz}
+
+\begin{satz}{8.7 Cauchysche Ungleichungen}
+Sei $G$ offen, $f \in H(G)$, $\overline{B_r(z_0)} \subset G$. Für $0 < \delta \le r$ gilt:
+\[
+    |f^{(n)}(z)| \le \frac{n!}{r^n} \max_{w \in \partial B_r(z_0)} |f(w)| \quad \forall z \in \overline{B_{r-\delta}(z_0)}
+\]
+Speziell für $z=z_0$ folgt $|f^{(n)}(z_0)| \le \frac{n!}{r^n} \max |f(w)|$, sowie für $\delta = r/2$: $|f^{(n)}(z)| \le \frac{2^n n!}{r^n} \max |f(w)|$.
+\end{satz}
