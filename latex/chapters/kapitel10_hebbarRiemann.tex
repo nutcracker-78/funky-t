@@ -1,0 +1,48 @@
+% ==========================================
+% Kapitel 10: Morera, Diskrete Mengen und Hebbarkeit
+% ==========================================
+\section{Charakterisierung holomorpher Funktionen}
+
+\begin{satz}{10.1 Äquivalente Charakterisierung}
+Sei $G \subset \C$ offen und $f: G \to \C$. Dann sind äquivalent:
+\begin{itemize}
+    \item[i)] $f \in H(G)$
+    \item[ii)] $f$ besitzt lokale Stammfunktionen auf $G$.
+    \item[iii)] $f$ ist Fréchet-differenzierbar und erfüllt die CR-DGLn.
+    \item[iv)] $f \in C^0(G; \C)$ und $\int_{\partial \Delta} f(z) \, \dz = 0$ für alle Dreiecke $\Delta \subset G$.
+\end{itemize}
+\end{satz}
+
+\begin{satz}{10.2 Satz von Morera}
+Sei $G \subset \C$ offen und $f \in C^0(G; \C)$. Wenn für alle Dreiecke $\Delta \subset G$ gilt $\int_{\partial \Delta} f(z) \, \dz = 0$, dann ist $f \in H(G)$.
+\end{satz}
+
+\begin{defi}{10.3 Diskrete Mengen}
+Eine Menge $M \subset G$ heißt \textbf{diskret in $G$}, wenn sie keinen Häufungspunkt in $G$ besitzt. D.h. für jedes $z \in G$ existiert ein $\varepsilon > 0$ mit $B_\varepsilon(z) \cap M = \emptyset$ (oder $B_\varepsilon(z) \cap M = \{z\}$).
+\end{defi}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bsp. 10.5: Diskrete Mengen}]
+\begin{itemize}
+    \item[i)] $\mathbb{Z}$ ist diskret in $\C$.
+    \item[ii)] $\{1, 2, \sqrt{3}, i\}$ ist diskret in $\{\operatorname{Re} z > -1\}$.
+    \item[iii)] $\{1/n : n \in \mathbb{N}\}$ ist diskret in $\{\operatorname{Re} z \ge 0\}$.
+    \item[iv)] $\{1/n : n \in \mathbb{N}\}$ ist \textbf{nicht} diskret in $\C$ (da $0$ Häufungspunkt ist).
+    \item[v)] $\mathbb{Q} \subset \C$ ist nicht diskret.
+    \item[vi)] $(1, 2) \subset \C$ ist nicht diskret.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{satz}{10.6 Holomorphie-Fortsetzung}
+Sei $M \subset G$ diskret und $f \in C^0(G; \C) \cap H(G \setminus M)$, dann ist $f \in H(G)$.
+\end{satz}
+
+\begin{satz}{10.7 Riemannscher Hebbarkeitssatz}
+Sei $G$ offen, $z_0 \in G$ und $f \in H(G \setminus \{z_0\})$. Ist $f$ in einer punktierten Umgebung von $z_0$ beschränkt, dann existiert eine holomorphe Fortsetzung $\tilde{f}: G \to \C$ mit $\tilde{f}|_{G \setminus \{z_0\}} = f$.
+\end{satz}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bemerkung 10.8}]
+\begin{itemize}
+    \item[i)] Satz 10.7 gilt allgemeiner für Mengen $M$, wobei $f$ bei Annäherung an $M$ beschränkt bleibt.
+    \item[ii)] $f$ ist genau dann holomorph fortsetzbar, wenn sie in einer punktierten Umgebung beschränkt ist.
+\end{itemize}
+\end{tcolorbox}
