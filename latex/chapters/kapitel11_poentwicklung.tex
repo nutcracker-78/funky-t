@@ -1,0 +1,57 @@
+% ==========================================
+% Kapitel 11: Potenzreihenentwicklung und Identitätssatz
+% ==========================================
+\section{Potenzreihenentwicklung und Identitätssatz}
+
+\begin{defi}{11.1 Analytische Funktionen}
+Sei $G \subset \C$ offen. Eine Funktion $f: G \to \C$ heißt \textbf{analytisch}, wenn sie lokal als Potenzreihe dargestellt werden kann. Das heißt, zu jedem $z_0 \in G$ existiert ein $\varepsilon > 0$ und Koeffizienten $(a_n)_{n\in\N_0} \subset \C$, sodass:
+\[
+    f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n \quad \forall z \in B_\varepsilon(z_0)
+\]
+\end{defi}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bemerkung 11.2 \& 11.4}]
+\begin{itemize}
+    \item[11.2] Jede analytische Funktion ist holomorph und die Koeffizienten entsprechen den Taylor-Koeffizienten $a_n = \frac{f^{(n)}(z_0)}{n!}$.
+    \item[11.4] Der Konvergenzradius $R$ der Taylorreihe von $f \in H(G)$ um $z_0$ ist mindestens der Abstand zum Rand von $G$. Er kann aber echt größer sein (Beispiel: $\log z$ Hauptzweig auf $\C \setminus (-\infty, 0]$ bei $z_0 = 1+i$, $R = |z_0| = \sqrt{2}$).
+\end{itemize}
+\end{tcolorbox}
+
+\begin{satz}{11.3 Potenzreihenentwicklung}
+Sei $G \subset \C$ offen. Dann gilt: $f \in H(G) \iff f$ ist analytisch auf $G$.
+\end{satz}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bsp. 11.5}]
+\begin{itemize}
+    \item[i)] Ganze Funktionen ($f \in H(\C)$) besitzen überall eine globale Taylorreihenentwicklung.
+    \item[ii)] $f(z) = 1/z$ auf $G = \C \setminus \{0\}$: Die Taylorreihe hat den Konvergenzradius $|z_0|$. Globalisierung ist nicht möglich, da $f$ nicht auf ganz $\C$ holomorph ist.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{satz}{11.6 Identitätssatz}
+Sei $G$ ein Gebiet und $f, p \in H(G)$. Dann sind äquivalent:
+\begin{itemize}
+    \item[i)] $f(z) = p(z)$ für alle $z \in G$.
+    \item[ii)] Es gibt ein $z_0 \in G$ mit $f^{(n)}(z_0) = p^{(n)}(z_0)$ für alle $n \in \N_0$.
+    \item[iii)] Es gibt eine Menge $M \subset G$ ohne Häufungspunkt (nicht diskret), auf der $f(z) = p(z)$ gilt.
+\end{itemize}
+\end{satz}
+
+\begin{tcolorbox}[colback=white, colframe=black!70, title={Bsp. 11.7 \& Korollar 11.8}]
+\begin{itemize}
+    \item[11.7] Da $\cos^2 z + \sin^2 z = 1$ für alle $z \in \R$ gilt (und $\R \subset \C$ nicht-diskret ist), gilt die Identität $\cos^2 z + \sin^2 z = 1$ für alle $z \in \C$.
+    \item[11.8] Ist $f \in H(G)$ nicht-konstant, so ist die Menge $M = \{z \in G : f(z) = c\}$ diskret für jedes $c \in \C$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{defi}{11.9 Ordnung einer Nullstelle}
+Sei $f \in H(G)$ und $z_0 \in G$. $f$ hat in $z_0$ eine \textbf{Nullstelle der Ordnung (Vielfachheit) $m$}, falls $f(z_0) = f'(z_0) = \dots = f^{(m-1)}(z_0) = 0$ und $f^{(m)}(z_0) \neq 0$ gilt. 
+(Bei $f^{(n)}(z_0) = 0$ für alle $n$ ist $m = \infty$).
+\end{defi}
+
+\begin{satz}{11.10 Charakterisierung von Nullstellen}
+Sei $f \in H(G)$ und $z_0 \in G$ eine Nullstelle der Ordnung $m \in \N$. Dann gilt:
+\[
+    f(z) = (z-z_0)^m \cdot g(z) \quad \text{mit } g(z) \in H(G) \text{ und } g(z_0) \neq 0
+\]
+\end{satz}
