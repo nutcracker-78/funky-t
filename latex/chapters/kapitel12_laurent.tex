@@ -1,0 +1,56 @@
+% ==========================================
+% Kapitel 12: Holomorphe Funktionen in Kreisringen und Laurentreihen
+% ==========================================
+\setcounter{section}{11} % Setzt Zähler, falls du Kapitel 11 bereits hast
+\section{Holomorphe Funktionen in Kreisringen und Laurentreihen}
+
+
+
+\begin{defi}{12.1 Kreisring (Annulus)}
+Seien $0 \le r < R \le \infty$ und $z_0 \in \C$. Der \textbf{Kreisring} (Annulus) um $z_0$ mit innerem Radius $r$ und äußerem Radius $R$ ist definiert als:
+\[
+    A_{r,R}(z_0) := \{z \in \C : r < |z-z_0| < R\}
+\]
+Spezialfälle:
+\begin{itemize}
+    \item $A_{0,R}(z_0) = B_R(z_0) \setminus \{z_0\}$ (punktierte Kreisscheibe)
+    \item $A_{0,\infty} = \C \setminus \{z_0\}$
+    \item $A_{r,R}(z_0) = B_R(z_0) \setminus \overline{B_r(z_0)}$
+\end{itemize}
+\end{defi}
+
+\begin{defi}{12.2 Laurentreihe}
+Eine \textbf{Laurentreihe} um $z_0$ ist eine Reihe der Form
+\[
+    \sum_{n=-\infty}^\infty a_n (z-z_0)^n
+\]
+Sie besteht aus:
+\begin{itemize}
+    \item \textbf{Hauptteil}: $\sum_{n=-\infty}^{-1} a_n (z-z_0)^n$
+    \item \textbf{Nebenteil (Regulärer Teil)}: $\sum_{n=0}^\infty a_n (z-z_0)^n$
+\end{itemize}
+Die Reihe konvergiert in $z_1$, wenn sowohl Hauptteil als auch Nebenteil konvergieren.
+\end{defi}
+
+\begin{satz}{12.3 Holomorphie von Laurentreihen}
+Seien $a_n \in \C$ und die Reihe $\sum_{n=-\infty}^\infty a_n (z-z_0)^n$ konvergiere in $z_1$ und $z_2$ mit $|z_1-z_0| < |z_2-z_0|$. Dann konvergiert die Laurentreihe absolut und lokal gleichmäßig auf dem Kreisring $A_{|z_1-z_0|, |z_2-z_0|}(z_0)$ und stellt eine holomorphe Funktion $f$ dar. Die Laurentkoeffizienten sind eindeutig bestimmt durch:
+\[
+    a_n = \frac{1}{2\pi\I} \int_{\partial B_\rho(z_0)} \frac{f(w)}{(w-z_0)^{n+1}} \, dw
+\]
+für jedes $\rho \in (r, R)$.
+\end{satz}
+
+\begin{satz}{12.4 Cauchysche Ungleichungen für Laurentreihen}
+Sei $f(z) = \sum_{n=-\infty}^\infty a_n (z-z_0)^n$ in $A_{r,R}(z_0)$ konvergent. Dann gilt für jedes $\delta \in (r, R)$:
+\[
+    |a_n| \le \delta^{-n} \sup_{z \in \partial B_\delta(z_0)} |f(z)| \quad \forall n \in \Z
+\]
+\end{satz}
+
+\begin{satz}{12.7 Pfadunabhängigkeit im Kreisring}
+Sei $f: A_{r,R}(z_0) \to \C$ holomorph. Dann ist das Integral
+\[
+    \int_{\partial B_\delta(z_0)} f(z) \, \dz
+\]
+unabhängig von $\delta \in (r, R)$.
+\end{satz}
